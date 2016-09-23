@@ -401,16 +401,28 @@ Once you find the particular index he's located in, delete him from the array.*/
 
   //Code Here
 function removeUser(email) {
-  if (users[0].email === email) {
-    users.splice(0, 1);
-  } else if (users[1].email === email) {
-    users.splice(1, 1);
-  } else if (users[2].email === email) {
-    users.splice(2, 1);
+  for (var i = 0; i < users.length; i++) {
+    if (users[i].email === email) {
+      users.splice(i, 1);
+    }
   }
   return users;
 }
 
 removeUser('tylermcginnis33@gmail.com');
+
+// ALTERNATIVE WAY WITHOUT USING FOR LOOP.
+// function removeUser(email) {
+//   if (users[0].email === email) {
+//     users.splice(0, 1);
+//   } else if (users[1].email === email) {
+//     users.splice(1, 1);
+//   } else if (users[2].email === email) {
+//     users.splice(2, 1);
+//   }
+//   return users;
+// }
+//
+// removeUser('tylermcginnis33@gmail.com');
 
 //The activity we just did is very much how data works in 'the real world'.
